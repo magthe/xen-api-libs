@@ -1,0 +1,12 @@
+OASISFormat: 0.1
+Name:        uuid
+Version:     0.1
+Synopsis:    uuid library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.1), DevFiles (0.1)
+
+Library uuid
+  Path:       src
+  Modules:    Uuid
+  BuildTools: ocamlbuild
