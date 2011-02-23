@@ -1,0 +1,14 @@
+OASISFormat: 0.1
+Name:        eventchn
+Version:     0.1
+Synopsis:    eventchn library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+
+Library eventchn
+  Path:       src
+  Modules:    Eventchn
+  BuildTools: ocamlbuild
+  CSources:   eventchn_injection.c, eventchn_stubs.c
+  CCOpt: -I..
