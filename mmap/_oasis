@@ -1,0 +1,13 @@
+OASISFormat: 0.1
+Name:        mmap
+Version:     0.1
+Synopsis:    mmap library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+
+Library mmap
+  Path:       src
+  Modules:    Mmap
+  BuildTools: ocamlbuild
+  CSources:   mmap_stubs.h, mmap_stubs.c
