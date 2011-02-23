@@ -1,0 +1,13 @@
+OASISFormat: 0.1
+Name:        cdrom
+Version:     0.1
+Synopsis:    cdrom library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+
+Library cdrom
+  Path:       src
+  Modules:    Cdrom
+  BuildTools: ocamlbuild
+  CSources:   cdrom_stubs.c
