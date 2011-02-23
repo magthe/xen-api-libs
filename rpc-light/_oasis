@@ -1,0 +1,43 @@
+OASISFormat: 0.1
+Name:        rpclight
+Version:     0.1
+Synopsis:    RPC light library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+BuildTools: ocamlbuild
+
+Library syntax
+    Path: src
+    Modules: Rpc, Pa_rpc, P4_rpc
+    FindlibName: syntax
+    FindlibParent: rpclight
+    BuildDepends: type-conv.syntax
+    XMETAType: syntax
+
+Library core
+    Path: src
+    Modules: Rpc
+    FindlibName: core
+    FindlibParent: rpclight
+
+Library xml
+    Path: src
+    Modules: Xmlrpc
+    FindlibName: xml
+    FindlibParent: rpclight
+    BuildDepends: rpclight.core, xmlm
+
+Library json
+    Path: src
+    Modules: Jsonrpc
+    FindlibName: json
+    FindlibParent: rpclight
+    BuildDepends: rpclight.core
+
+Library rpclight
+    Path: src
+    Modules:
+    FindlibName: rpclight
+    BuildDepends: rpclight.xml, rpclight.json
+

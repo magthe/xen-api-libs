@@ -1,0 +1,17 @@
+# OASIS_START
+# DO NOT EDIT (digest: dec71c164ac6e5dbc0fd719cbf084ac6)
+# Library core
+# Library xml
+# Library json
+# Library rpclight
+<src/*.ml{,i}>: use_json
+<src/*.ml{,i}>: use_xml
+<src/*.ml{,i}>: use_core
+<src/*.ml{,i}>: pkg_xmlm
+# Library syntax
+"src": include
+<src/*.ml{,i}>: pkg_type-conv.syntax
+# OASIS_STOP
+
+<src/pa_rpc.ml{,i}>: syntax_camlp4r, pkg_type-conv.syntax, pkg_camlp4.quotations
+<src/p4_rpc.ml{,i}>: syntax_camlp4r, pkg_type-conv.syntax, pkg_camlp4.quotations
