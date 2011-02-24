@@ -1,0 +1,13 @@
+OASISFormat: 0.1
+Name:        xen-utils
+Version:     0.1
+Synopsis:    xen-utils library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+
+Library xen_utils
+    Path:       src
+    Modules:    Xen_cmdline
+    BuildTools: ocamlbuild
+    BuildDepends: stdext
