@@ -1,0 +1,15 @@
+OASISFormat: 0.1
+Name:        xb
+Version:     0.1
+Synopsis:    xb library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+
+Library xb
+    Path:       src
+    Modules:    Packet, Xs_ring, Xb, Partial, Op
+    BuildTools: ocamlbuild
+    CSources:   xs_ring_stubs.c, xb_stubs.c
+    CCOpt: -I../../mmap/src -I..
+    BuildDepends: mmap
