@@ -1,0 +1,16 @@
+OASISFormat: 0.1
+Name:        stdext
+Version:     0.1
+Synopsis:    stdext library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+BuildTools: ocamlbuild
+
+Library stdext
+    Path:       src
+    ByteOpt:    -thread
+    NativeOpt:  -thread
+    Modules:    Stringext, Base64, Listext, Config, Forkhelpers, Ring, Unixext, Zerocheck, Trie, Backtrace, Either, Fring, Hashtblext, Fecomms, Gzip, Int64ext, ExtentlistSet, Date, Bigbuffer, Qring, Opt, Os, Threadext, Fun, Arrayext, Range, Mapext, Pervasiveext, Fe, VIO, Encodings, Tar, LazyList, Filenameext
+    BuildDepends: uuid, unix, rpclight
+    CSources:   unixext_stubs.c, zerocheck_stub.c

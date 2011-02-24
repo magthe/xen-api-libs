@@ -1,0 +1,24 @@
+# OASIS_START
+# DO NOT EDIT (digest: 7b37d2bb16b82d785469e1e4327cb6db)
+# Library stdext
+"src": include
+<src/stdext.{cma,cmxa}>: oasis_library_stdext_byte
+<src/*.ml{,i}>: oasis_library_stdext_byte
+"src/unixext_stubs.c": oasis_library_stdext_byte
+"src/zerocheck_stub.c": oasis_library_stdext_byte
+<src/stdext.{cma,cmxa}>: oasis_library_stdext_native
+<src/*.ml{,i}>: oasis_library_stdext_native
+"src/unixext_stubs.c": oasis_library_stdext_native
+"src/zerocheck_stub.c": oasis_library_stdext_native
+<src/stdext.{cma,cmxa}>: use_libstdext
+<src/*.ml{,i}>: pkg_uuid
+<src/*.ml{,i}>: pkg_unix
+<src/*.ml{,i}>: pkg_rpclight
+"src/unixext_stubs.c": pkg_uuid
+"src/unixext_stubs.c": pkg_unix
+"src/unixext_stubs.c": pkg_rpclight
+"src/zerocheck_stub.c": pkg_uuid
+"src/zerocheck_stub.c": pkg_unix
+"src/zerocheck_stub.c": pkg_rpclight
+# OASIS_STOP
+<src/fe.ml{,i}>: syntax_camlp4o, pkg_rpclight.syntax
