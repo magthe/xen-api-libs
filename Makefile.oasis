@@ -1,0 +1,32 @@
+DESTDIR=$(PWD)/,,destdir
+
+.PHONY : all
+all : uuid rpc-light stdext mmap xc cdrom xb eventchn xen-utils
+
+$(DESTDIR) :
+	mkdir -p $@
+
+.PHONY : uuid rpc-light stdext mmap xc cdrom xb eventchn xen-utils
+uuid : .build_uuid
+rpc-light : .build_rpc-light
+stdext : uuid rpc-light .build_stdext
+mmap : .build_mmap
+xc : uuid mmap .build_xc
+cdrom : .build_cdrom
+xb : mmap .build_xb
+eventchn : .build_eventchn
+xen-utils : .build_xen-utils
+xs : xb .build_xs
+xsrpc : xs .build_xsrpc
+
+.build_% : $(DESTDIR)
+	(cd $*; \
+	oasis setup; \
+	OCAMLPATH=$(DESTDIR) ./configure --destdir $(DESTDIR); \
+	OCAMLPATH=$(DESTDIR) make; \
+	OCAMLFIND_DESTDIR=$(DESTDIR) make install \
+	)
+	touch $@
+
+clean:
+	git clean -fdx
