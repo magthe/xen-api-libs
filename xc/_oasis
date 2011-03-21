@@ -1,0 +1,15 @@
+OASISFormat : 0.1
+Name        : xc
+Version     : 0.1
+Synopsis    : Xen Control Interface
+Authors     : Citrix
+License     : LGPL
+Plugins     : META (0.2), DevFiles (0.2)
+BuildTools  : ocamlbuild
+
+Library xc
+    Path         : src
+    Modules      : Xc
+    BuildDepends : uuid, mmap
+    CCOpt        : -I.. -I../../mmap/src
+    CSources     : xc_cpufeature.h, xc_cpuid.h, xc_e820.h, xc.h, xc_lib.c, xc_lib_injection.c, xc_stubs.c
