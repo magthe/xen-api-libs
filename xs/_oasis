@@ -1,0 +1,13 @@
+OASISFormat: 0.1
+Name:        xs
+Version:     0.1
+Synopsis:    xs library
+Authors:     Citrix
+License:     LGPL
+Plugins:     META (0.2), DevFiles (0.2)
+BuildTools: ocamlbuild
+
+Library xs
+    Path:       src
+    Modules:    Xs, Queueop, Xsraw, Xst
+    BuildDepends: xb
